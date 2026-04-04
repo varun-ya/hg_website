@@ -2,195 +2,140 @@
 import Layout from '../layouts/Layout.astro';
 import HeaderNew from '../components/HeaderNew';
 import FooterNew from '../components/FooterNew';
+
+const sections = [
+  {
+    num: "01",
+    title: "For Learners",
+    intro: "If you are not satisfied with your Tutor, you may request a Tutor Replacement. If still not satisfied after replacement, you may request a refund.",
+    items: [
+      "Indian users will be charged a 5% platform fee on the refund amount",
+      "International users will be charged a 10% platform fee on the refund amount",
+      "The remaining amount will be refunded accordingly"
+    ],
+    outro: "Refunds are not applicable for no-shows, misuse, or sessions already consumed."
+  },
+  {
+    num: "02",
+    title: "For Tutors",
+    intro: "Tutors must pay a ₹499 listing fee valid for 365 days. This fee is non-refundable and only provides profile visibility.",
+    items: [
+      "HomeGuru does not guarantee students, bookings, or earnings",
+      "Leads may be shared via app or WhatsApp notifications",
+      "Tutors are responsible for converting leads and maintaining profile quality",
+      "Payments for completed sessions will be processed weekly, subject to platform commission"
+    ],
+    outro: ""
+  },
+  {
+    num: "03",
+    title: "General Terms",
+    intro: "HomeGuru reserves the right to approve or reject refund requests and take action in case of misuse.",
+    items: [],
+    outro: ""
+  },
+];
 ---
 
 <Layout title="Refund Policy | HomeGuru">
   <HeaderNew client:load />
 
-  <main class="flex-1 bg-[#fafafa]" style="font-family: Matter, sans-serif;">
+  <main style="font-family: Matter, sans-serif; background: #fff;">
 
     {/* ── Hero ── */}
-    <section class="relative pt-40 pb-20 overflow-hidden">
-      <div
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] blur-[120px] opacity-25 pointer-events-none"
-        style="background: radial-gradient(ellipse, #A5BBFC 0%, #D5E2FF 50%, transparent 70%);"
-        aria-hidden="true"
-      />
-      <div class="relative z-10 flex flex-col items-center text-center gap-5 w-[85%] md:w-9/12 max-w-[760px] mx-auto">
-        <span
-          class="font-matter text-[10px] font-semibold uppercase tracking-[3.5px] px-4 py-1.5 rounded-full"
-          style="color:#F97316; background:rgba(249,115,22,0.07); border:1px solid rgba(249,115,22,0.18);"
-        >
-          Legal
-        </span>
-        <h1 class="font-season-mix text-[42px] md:text-[64px] leading-[1.05] tracking-tight text-[#111]">
-          Refund Policy
-        </h1>
-        <p class="font-matter text-[#777] text-base md:text-[17px] leading-[1.8] max-w-[540px]">
-          At HomeGuru, we believe in full transparency and clarity when it comes to payments. Please read this policy carefully before proceeding with any transaction.
+    <section style="padding-top: 140px; padding-bottom: 72px; border-bottom: 1px solid #F0F0F0;">
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <p style="font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #999; margin-bottom: 20px;">
+          Legal · HomeGuru (I) Private Limited
         </p>
-        <div class="flex items-center gap-2 mt-1">
-          <div class="w-1 h-1 rounded-full" style="background:#CBCBCB;"></div>
-          <span class="font-matter text-[11px] text-[#BBBBBB] tracking-wide">Last updated: 2025</span>
-          <div class="w-1 h-1 rounded-full" style="background:#CBCBCB;"></div>
+        <h1 class="font-season-mix" style="font-size: clamp(40px, 6vw, 64px); line-height: 1.04; letter-spacing: -1.5px; color: #111; margin: 0 0 24px 0;">
+          Refund<br/>Policy
+        </h1>
+        <p style="font-size: 17px; line-height: 1.75; color: #666; max-width: 520px; margin: 0 0 28px 0;">
+          This policy outlines the refund terms for learners and tutors on the HomeGuru platform. Please read carefully before making any payment.
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <span style="font-size: 12px; color: #999;">Effective Date: 1st April 2026</span>
+          <span style="width: 3px; height: 3px; border-radius: 50%; background: #D0D0D0; display: inline-block;"></span>
+          <span style="font-size: 12px; color: #999;">3 Sections</span>
         </div>
       </div>
     </section>
 
-    {/* ── Divider ── */}
-    <div class="w-[85%] md:w-9/12 max-w-[760px] mx-auto" style="height:1px; background:#EBEBEB;"></div>
-
     {/* ── Content ── */}
-    <section class="mx-auto w-[85%] md:w-9/12 max-w-[760px] py-16 flex flex-col gap-5">
+    <section style="max-width: 680px; margin: 0 auto; padding: 0 24px 120px 24px;">
 
-      {/* For Learners */}
-      <div
-        class="group flex flex-col gap-0 rounded-[24px] overflow-hidden"
-        style="border:1px solid #E8E8E8;"
-      >
-        {/* Card header */}
-        <div class="flex items-center gap-4 px-8 py-6" style="background:#fff; border-bottom:1px solid #F0F0F0;">
-          <div
-            class="w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0"
-            style="background:#EEF2FF; border:1px solid #C7D2FE;"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M139.06,28.94a16,16,0,0,0-22.12,0l-96,96A16,16,0,0,0,32,152H48v56a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V152h16a16,16,0,0,0,11.31-27.31Z" stroke="#6366F1" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+      {sections.map((section, i) => (
+        <div style={`padding: 52px 0; ${i < sections.length - 1 ? 'border-bottom: 1px solid #F2F2F2;' : ''}`}>
+
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: #C0C0C0; text-transform: uppercase; flex-shrink: 0;">
+              {section.num}
+            </span>
+            <h2 class="font-season-mix" style="font-size: 22px; color: #111; line-height: 1.2; letter-spacing: -0.3px; margin: 0;">
+              {section.title}
+            </h2>
           </div>
-          <div>
-            <p class="font-matter text-[10px] font-semibold uppercase tracking-[2.5px] text-[#9CA3AF] mb-0.5">Section 01</p>
-            <h2 class="font-season-mix text-[22px] md:text-[26px] text-[#111] leading-tight">For Learners</h2>
+
+          <div style="padding-left: 36px;">
+            {section.intro && (
+              <p style="font-size: 15px; line-height: 1.8; color: #444; margin: 0 0 16px 0;">
+                {section.intro}
+              </p>
+            )}
+
+            {section.items.length > 0 && (
+              <ul style="margin: 0 0 16px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;">
+                {section.items.map((item) => (
+                  <li style="display: flex; align-items: flex-start; gap: 12px;">
+                    <span style="margin-top: 9px; flex-shrink: 0; width: 4px; height: 4px; border-radius: 50%; background: #C8C8C8; display: inline-block;"></span>
+                    <span style="font-size: 15px; line-height: 1.75; color: #444;">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {section.outro && (
+              <p style="font-size: 14px; line-height: 1.75; color: #888; margin: 0; padding-top: 14px; border-top: 1px solid #F0F0F0;">
+                {section.outro}
+              </p>
+            )}
           </div>
+
         </div>
+      ))}
 
-        {/* Card body */}
-        <div class="flex flex-col gap-5 px-8 py-7" style="background:#FAFAFA;">
-          <div class="flex items-start gap-4">
-            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center" style="background:#EEF2FF;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z" stroke="#6366F1" stroke-width="8" fill="none"/>
-              </svg>
-            </div>
-            <p class="font-matter text-[#444] text-[15px] leading-[1.85]">
-              All payments made towards course fees are <span class="font-semibold text-[#111]">non-refundable</span>.
-              Once added, the amount will be securely stored in your HomeGuru wallet and can only be used to book classes with the tutors of your choice, at your convenience.
-            </p>
-          </div>
-
-          <div style="height:1px; background:#EBEBEB;"></div>
-
-          <div class="flex items-start gap-4">
-            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center" style="background:#EEF2FF;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM40,56H216V96H40ZM40,200V112H216v88Z" stroke="#6366F1" stroke-width="8" fill="none"/>
-              </svg>
-            </div>
-            <p class="font-matter text-[#444] text-[15px] leading-[1.85]">
-              We do not offer cash refunds under any circumstances. Instead, we ensure you get complete value by helping you utilize your paid balance for personalized, quality learning sessions.
-            </p>
-          </div>
-        </div>
+      {/* Acknowledgement */}
+      <div style="margin-top: 16px; padding: 32px 36px; background: #F7F7F7; border-radius: 16px;">
+        <p style="font-size: 14px; line-height: 1.8; color: #666; margin: 0; text-align: center;">
+          By using HomeGuru, you acknowledge that you have read, understood, and agreed to this Refund Policy.
+        </p>
       </div>
 
-      {/* For Tutors */}
-      <div
-        class="flex flex-col gap-0 rounded-[24px] overflow-hidden"
-        style="border:1px solid #E8E8E8;"
-      >
-        {/* Card header */}
-        <div class="flex items-center gap-4 px-8 py-6" style="background:#fff; border-bottom:1px solid #F0F0F0;">
-          <div
-            class="w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0"
-            style="background:#FFF7ED; border:1px solid #FDDCBB;"
+      {/* Contact */}
+      <div style="margin-top: 16px; padding: 32px 36px; border: 1px solid #EBEBEB; border-radius: 16px; display: flex; flex-direction: column; gap: 6px;">
+        <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #999; margin: 0;">
+          Questions?
+        </p>
+        <p class="font-season-mix" style="font-size: 22px; color: #111; margin: 4px 0 8px 0;">Still have questions?</p>
+        <p style="font-size: 14px; color: #888; margin: 0 0 20px 0; line-height: 1.7;">
+          We're here to help. Reach out and we'll get back to you.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <a
+            href="mailto:support@homeguruworld.com"
+            style="display: inline-flex; align-items: center; gap: 8px; background: #111; color: #fff; font-size: 13px; font-weight: 600; padding: 11px 22px; border-radius: 100px; text-decoration: none; width: fit-content;"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,18.25,71.5,8,8,0,0,0,8,79.5a8,8,0,0,0,8,8,80,80,0,0,1,80,80,8,8,0,0,0,16,0,80,80,0,0,1,80-80,8,8,0,0,0,8-8,8,8,0,0,0-10.25-8A95.83,95.83,0,0,0,117.25,157.92ZM84,156a44,44,0,1,1,44-44A44.05,44.05,0,0,1,84,156Zm140,36a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h48A8,8,0,0,1,224,192Zm0-32a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h48A8,8,0,0,1,224,160Zm0-32a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h48A8,8,0,0,1,224,128Z" stroke="#F97316" stroke-width="6" fill="none"/>
-            </svg>
-          </div>
-          <div>
-            <p class="font-matter text-[10px] font-semibold uppercase tracking-[2.5px] text-[#9CA3AF] mb-0.5">Section 02</p>
-            <h2 class="font-season-mix text-[22px] md:text-[26px] text-[#111] leading-tight">For Tutors</h2>
-          </div>
+            support@homeguruworld.com
+          </a>
+          <a
+            href="https://www.homeguruworld.com"
+            target="_blank"
+            style="display: inline-flex; align-items: center; gap: 8px; background: #F5F5F5; color: #111; font-size: 13px; font-weight: 600; padding: 11px 22px; border-radius: 100px; text-decoration: none; width: fit-content;"
+          >
+            www.homeguruworld.com
+          </a>
         </div>
-
-        {/* Card body */}
-        <div class="flex flex-col gap-5 px-8 py-7" style="background:#FAFAFA;">
-          <div class="flex items-start gap-4">
-            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center" style="background:#FFF7ED;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                <path d="M216,72H56a8,8,0,0,1,0-16H192a8,8,0,0,0,0-16H56A24,24,0,0,0,32,64V192a24,24,0,0,0,24,24H216a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72Zm0,128H56a8,8,0,0,1,0-16H216ZM216,168H56V88H216Z" stroke="#F97316" stroke-width="8" fill="none"/>
-              </svg>
-            </div>
-            <p class="font-matter text-[#444] text-[15px] leading-[1.85]">
-              The <span class="font-semibold text-[#111]">₹999</span> is a one-time registration fee that is <span class="font-semibold text-[#111]">non-refundable</span>. It covers your profile listing on the HomeGuru platform for one full academic year.
-            </p>
-          </div>
-
-          <div style="height:1px; background:#EBEBEB;"></div>
-
-          {/* Please note block */}
-          <div class="flex flex-col gap-4 rounded-[16px] p-5" style="background:#fff; border:1px solid #F0F0F0;">
-            <div class="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256" fill="none">
-                <path d="M236.8,188.09,149.35,36.22a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM120,104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,88a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z" stroke="#F97316" stroke-width="12" fill="none"/>
-              </svg>
-              <span class="font-matter text-[11px] font-semibold uppercase tracking-[2px] text-[#F97316]">Please Note</span>
-            </div>
-            <ul class="flex flex-col gap-3">
-              {[
-                "This fee does not guarantee student leads or class bookings.",
-                "Learners are free to browse, evaluate, and choose tutors based on their preferences.",
-              ].map((item) => (
-                <li class="flex items-start gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z" stroke="#F97316" stroke-width="8" fill="none"/>
-                  </svg>
-                  <span class="font-matter text-[#555] text-[14px] leading-[1.75]">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div class="flex items-start gap-4">
-            <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center" style="background:#FFF7ED;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a16,16,0,1,1,16,16A16,16,0,0,1,112,84Z" stroke="#F97316" stroke-width="8" fill="none"/>
-              </svg>
-            </div>
-            <p class="font-matter text-[#444] text-[15px] leading-[1.85]">
-              Our role is to provide you with a credible platform and visibility. Conversions depend on your profile strength, teaching quality, and engagement.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact card */}
-      <div
-        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 px-8 py-7 rounded-[24px]"
-        style="background:#fff; border:1px solid #E8E8E8;"
-      >
-        <div class="flex items-start gap-4">
-          <div class="mt-0.5 w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0" style="background:#F6F6F6; border:1px solid #EBEBEB;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z" stroke="#111" stroke-width="8" fill="none"/>
-            </svg>
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="font-season-mix text-[20px] text-[#111] leading-tight">Still have questions?</p>
-            <p class="font-matter text-[13px] text-[#888] leading-relaxed">We appreciate your understanding and look forward to supporting your journey on HomeGuru.</p>
-          </div>
-        </div>
-        <a
-          href="mailto:support@homeguruworld.com"
-          class="inline-flex items-center gap-2.5 font-matter font-semibold text-[13px] px-5 py-3 rounded-full flex-shrink-0 transition-opacity duration-200 hover:opacity-75 active:scale-95"
-          style="background:#111; color:#fff;"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256" fill="none">
-            <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z" stroke="white" stroke-width="12" fill="none"/>
-          </svg>
-          support@homeguruworld.com
-        </a>
       </div>
 
     </section>

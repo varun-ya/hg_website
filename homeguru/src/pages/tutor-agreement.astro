@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderNew from '../components/HeaderNew';
+import FooterNew from '../components/FooterNew';
+
+const sections = [
+  {
+    num: "01",
+    title: "Role of Tutor",
+    intro: "",
+    items: [
+      "Tutors are independent contractors",
+      "Not employees, partners, or agents of HomeGuru"
+    ],
+    outro: ""
+  },
+  {
+    num: "02",
+    title: "Services",
+    intro: "Tutors agree to:",
+    items: [
+      "Provide accurate information",
+      "Deliver quality sessions",
+      "Maintain professionalism"
+    ],
+    outro: ""
+  },
+  {
+    num: "03",
+    title: "Payments",
+    intro: "",
+    items: [
+      "Tutors will receive payments after deduction of platform commission",
+      "Payment timelines will be defined by HomeGuru"
+    ],
+    outro: ""
+  },
+  {
+    num: "04",
+    title: "Platform Rules",
+    intro: "Tutors agree NOT to:",
+    items: [
+      "Take students off-platform",
+      "Share personal contact for direct payments",
+      "Misrepresent qualifications"
+    ],
+    outro: "Violation may lead to permanent ban."
+  },
+  {
+    num: "05",
+    title: "Ratings & Reviews",
+    intro: "Tutors will be rated by students.",
+    items: [],
+    outro: "Consistently poor performance may result in removal."
+  },
+  {
+    num: "06",
+    title: "Content & Conduct",
+    intro: "Tutors must:",
+    items: [
+      "Avoid offensive or inappropriate behavior",
+      "Maintain professional communication"
+    ],
+    outro: ""
+  },
+  {
+    num: "07",
+    title: "Termination",
+    intro: "HomeGuru may suspend or terminate tutor accounts at any time for violations.",
+    items: [],
+    outro: ""
+  },
+  {
+    num: "08",
+    title: "Liability",
+    intro: "Tutors are solely responsible for:",
+    items: [
+      "Their teaching",
+      "Content delivered",
+      "Claims arising from their sessions"
+    ],
+    outro: ""
+  },
+  {
+    num: "09",
+    title: "Governing Law",
+    intro: "This agreement is governed by Indian law.",
+    items: [],
+    outro: "Jurisdiction: Jodhpur, Rajasthan."
+  },
+  {
+    num: "10",
+    title: "Acceptance",
+    intro: "By registering as a Tutor on HomeGuru, you agree to this Agreement.",
+    items: [],
+    outro: ""
+  },
+];
+---
+
+<Layout title="Tutor Agreement | HomeGuru">
+  <HeaderNew client:load />
+
+  <main style="font-family: Matter, sans-serif; background: #fff;">
+
+    {/* ── Hero ── */}
+    <section style="padding-top: 140px; padding-bottom: 72px; border-bottom: 1px solid #F0F0F0;">
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <p style="font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #999; margin-bottom: 20px;">
+          Legal · HomeGuru (I) Private Limited
+        </p>
+        <h1 class="font-season-mix" style="font-size: clamp(40px, 6vw, 64px); line-height: 1.04; letter-spacing: -1.5px; color: #111; margin: 0 0 24px 0;">
+          Tutor<br/>Agreement
+        </h1>
+        <p style="font-size: 17px; line-height: 1.75; color: #666; max-width: 520px; margin: 0 0 28px 0;">
+          This agreement governs your role and responsibilities as an independent tutor on the HomeGuru platform. Please read it carefully before registering.
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <span style="font-size: 12px; color: #999;">Effective Date: 1st April 2026</span>
+          <span style="width: 3px; height: 3px; border-radius: 50%; background: #D0D0D0; display: inline-block;"></span>
+          <span style="font-size: 12px; color: #999;">10 Sections</span>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Content ── */}
+    <section style="max-width: 680px; margin: 0 auto; padding: 0 24px 120px 24px;">
+
+      {sections.map((section, i) => (
+        <div style={`padding: 52px 0; ${i < sections.length - 1 ? 'border-bottom: 1px solid #F2F2F2;' : ''}`}>
+
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: #C0C0C0; text-transform: uppercase; flex-shrink: 0;">
+              {section.num}
+            </span>
+            <h2 class="font-season-mix" style="font-size: 22px; color: #111; line-height: 1.2; letter-spacing: -0.3px; margin: 0;">
+              {section.title}
+            </h2>
+          </div>
+
+          <div style="padding-left: 36px;">
+            {section.intro && (
+              <p style="font-size: 15px; line-height: 1.8; color: #444; margin: 0 0 16px 0;">
+                {section.intro}
+              </p>
+            )}
+
+            {section.items.length > 0 && (
+              <ul style="margin: 0 0 16px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;">
+                {section.items.map((item) => (
+                  <li style="display: flex; align-items: flex-start; gap: 12px;">
+                    <span style="margin-top: 9px; flex-shrink: 0; width: 4px; height: 4px; border-radius: 50%; background: #C8C8C8; display: inline-block;"></span>
+                    <span style="font-size: 15px; line-height: 1.75; color: #444;">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {section.outro && (
+              <p style="font-size: 14px; line-height: 1.75; color: #888; margin: 0; padding-top: 14px; border-top: 1px solid #F0F0F0;">
+                {section.outro}
+              </p>
+            )}
+          </div>
+
+        </div>
+      ))}
+
+      {/* Acknowledgement */}
+      <div style="margin-top: 16px; padding: 32px 36px; background: #F7F7F7; border-radius: 16px;">
+        <p style="font-size: 14px; line-height: 1.8; color: #666; margin: 0; text-align: center;">
+          By registering as a Tutor on HomeGuru, you acknowledge that you have read, understood, and agreed to this Tutor Agreement.
+        </p>
+      </div>
+
+      {/* Contact */}
+      <div style="margin-top: 16px; padding: 32px 36px; border: 1px solid #EBEBEB; border-radius: 16px; display: flex; flex-direction: column; gap: 6px;">
+        <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #999; margin: 0;">
+          Questions?
+        </p>
+        <p class="font-season-mix" style="font-size: 22px; color: #111; margin: 4px 0 8px 0;">Still have questions?</p>
+        <p style="font-size: 14px; color: #888; margin: 0 0 20px 0; line-height: 1.7;">
+          We're here to help. Reach out and we'll get back to you.
+        </p>
+        <a
+          href="mailto:support@homeguruworld.com"
+          style="display: inline-flex; align-items: center; gap: 8px; background: #111; color: #fff; font-size: 13px; font-weight: 600; padding: 11px 22px; border-radius: 100px; text-decoration: none; width: fit-content;"
+        >
+          support@homeguruworld.com
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <FooterNew client:load />
+</Layout>

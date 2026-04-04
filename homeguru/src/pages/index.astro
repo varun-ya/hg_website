@@ -7,16 +7,19 @@ import WhyHomeGuruSection from '../components/WhyHomeGuruSection';
 import StackLayersNew from '../components/StackLayersNew';
 import PlaygroundShowcase from '../components/PlaygroundShowcase';
 import SecuritySection from '../components/SecuritySection';
-
 import TestimonialSection from '../components/TestimonialSection';
 import FinalCTA from '../components/FinalCTA';
 import FAQSection from '../components/FAQSection';
 import FooterNew from '../components/FooterNew';
 import AboutSection from '../components/AboutSection';
+import { fetchLatestBlogs } from '../lib/fetchBlogs';
+
+const blogs = await fetchLatestBlogs(1);
+const latestBlog = blogs[0];
 ---
 
-<Layout title="HomeGuru | Learn Anything 1 on 1 With the Right Guru.">
-  <HeaderNew client:load />
+<Layout title="HomeGuru | Learn Anything 1 on 1 With the Right Tutor.">
+  <HeaderNew client:load latestBlogTitle={latestBlog.title} latestBlogHref={latestBlog.href} latestBlogImage={latestBlog.image} />
   
   <main class="z-100 flex-1 bg-[#fafafa] relative flex flex-col" style="font-family: Matter, sans-serif;">
     <div class="flex flex-col gap-32 md:gap-56 mx-auto w-full overflow-x-clip">

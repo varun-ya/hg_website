@@ -14,7 +14,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
     <title>{title}</title>
-    <meta name="description" content="India's Full Stack Sovereign AI Platform - Building Learn Anything 1 on 1 With the Right Guru. ." />
+    <meta name="description" content="India's Full Stack Sovereign AI Platform - Building Learn Anything 1 on 1 With the Right Tutor. ." />
     <link rel="canonical" href="https://www.homeguruworld.com/" />
 
     <!-- Language & Localization -->
@@ -26,7 +26,7 @@ const { title } = Astro.props;
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="HomeGuru | Learn Anything 1 on 1 With the Right Guru">
-    <meta property="og:description" content="India's Full Stack Sovereign AI Platform - Building Learn Anything 1 on 1 With the Right Guru. .">
+    <meta property="og:description" content="India's Full Stack Sovereign AI Platform - Building Learn Anything 1 on 1 With the Right Tutor. .">
     <meta property="og:url" content="https://www.homeguruworld.com/">
     <meta property="og:image" content="https://www.homeguruworld.com/assets/og-images/home-og.png">
     <meta property="og:image:width" content="1200">
@@ -35,7 +35,7 @@ const { title } = Astro.props;
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="HomeGuru | Learn Anything 1 on 1 With the Right Guru">
-    <meta name="twitter:description" content="India's Full Stack Sovereign AI Platform - Building Learn Anything 1 on 1 With the Right Guru. .">
+    <meta name="twitter:description" content="India's Full Stack Sovereign AI Platform - Building Learn Anything 1 on 1 With the Right Tutor. .">
     <meta name="twitter:image" content="https://www.homeguruworld.com/assets/og-images/home-og.png">
 
     <!-- Performance -->
@@ -43,16 +43,13 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://js.hsforms.net" crossorigin>
 
     <!-- Adobe Fonts - Acumin Pro (replace YOUR_KIT_ID with your Typekit kit ID) -->
-    <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css" />
+    <!-- removed -->
 
     <!-- Font Preloading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="preload" href="/fonts/MatterRegular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/MatterMedium.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/SeasonMix-Regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/SeasonMix-Medium.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Matter-TRIAL-Regular.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/Matter-TRIAL-Medium.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/Matter-TRIAL-SemiBold.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/Matter-TRIAL-Bold.otf" as="font" type="font/otf" crossorigin />
 
     <!-- Pre-built Tailwind CSS (bypasses PostCSS) -->
     <link rel="stylesheet" href="/prod-main.css" />
@@ -84,7 +81,7 @@ const { title } = Astro.props;
       gtag('config', 'G-7TL00J655C');
     </script>
   </head>
-  <body class="flex flex-col mx-auto min-h-screen overflow-x-hidden">
+  <body class="flex flex-col mx-auto min-h-screen">
     <slot />
   </body>
 </html>
@@ -95,7 +92,16 @@ const { title } = Astro.props;
 
   @font-face {
     font-family: 'Matter';
-    src: url('/fonts/MatterRegular.woff2') format('woff2');
+    src: url('/fonts/Matter-TRIAL-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Matter';
+    src: url('/fonts/Matter-TRIAL-Regular.otf') format('opentype'),
+         url('/fonts/MatterRegular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -103,7 +109,8 @@ const { title } = Astro.props;
 
   @font-face {
     font-family: 'Matter';
-    src: url('/fonts/MatterMedium.woff2') format('woff2');
+    src: url('/fonts/Matter-TRIAL-Medium.otf') format('opentype'),
+         url('/fonts/MatterMedium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -111,8 +118,17 @@ const { title } = Astro.props;
 
   @font-face {
     font-family: 'Matter';
-    src: url('/fonts/MatterSemiBold.woff2') format('woff2');
+    src: url('/fonts/Matter-TRIAL-SemiBold.otf') format('opentype'),
+         url('/fonts/MatterSemiBold.woff2') format('woff2');
     font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Matter';
+    src: url('/fonts/Matter-TRIAL-Bold.otf') format('opentype');
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
   }
@@ -136,7 +152,7 @@ const { title } = Astro.props;
   body {
     background: #fafafa;
     color: #1a1a1a;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Matter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

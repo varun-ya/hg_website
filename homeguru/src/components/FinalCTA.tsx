@@ -67,7 +67,7 @@ export default function FinalCTA() {
               </svg>
             </button>
           </a>
-          <a href="#become-tutor">
+          <a href="/become-a-tutor">
             <button
               className="inline-flex items-center justify-center font-matter font-semibold rounded-full px-8 py-4 text-base transition-all duration-200 active:scale-95"
               style={{ color: '#111', border: '1px solid #E5E7EB', background: '#fff' }}

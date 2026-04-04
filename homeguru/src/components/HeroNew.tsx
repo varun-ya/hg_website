@@ -95,7 +95,7 @@ export default function HeroNew() {
             >
               <div className="flex items-center justify-center bg-orange-500 text-white rounded w-4 h-4 text-[10px] font-bold">✦</div>
               <p className="font-matter font-medium text-gray-500 text-xs tracking-wide" style={{ whiteSpace: 'nowrap' }}>
-                India's <span style={{ color: '#111', fontWeight: 600 }}>#1</span> 1-on-1 Tutoring Platform
+                India's <span style={{ color: '#111', fontWeight: 600 }}>#1</span> One-on-One Tutoring Platform
               </p>
             </div>
 
@@ -106,7 +106,7 @@ export default function HeroNew() {
                 className="relative z-10 font-season-mix text-5xl md:text-6xl lg:text-[72px] text-center leading-[1.15] tracking-tight text-[#111]"
               >
                 <span className="block">Learn<FlipWords words={flipWords} duration={2500} /></span>
-                <span className="block">1 <span className="text-[#F97316]">on</span> 1 With the Right Guru.</span>
+                <span className="block">1 <span className="text-[#F97316]">on</span> 1 With the Right Tutor.</span>
               </h1>
               <p
                 ref={subheadingRef}
@@ -123,7 +123,7 @@ export default function HeroNew() {
                   Find Your Tutor
                 </button>
               </a>
-              <a href="#become-tutor" aria-label="Become a Tutor">
+              <a href="/become-a-tutor" aria-label="Become a Tutor">
                 <button className="inline-flex items-center justify-center cursor-pointer font-matter font-medium rounded-full px-6 py-3 text-base bg-[#f0f0f0] text-black border border-black transition-opacity duration-200 hover:opacity-75 active:scale-95">
                   Become a Tutor
                 </button>

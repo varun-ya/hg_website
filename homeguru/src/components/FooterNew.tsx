@@ -29,13 +29,22 @@ export default function FooterNew() {
           {/* Brand column */}
           <div className="flex flex-col gap-5">
             <a className="flex items-center" href="/">
-              <span style={{ fontSize: '24px', fontWeight: 700, color: '#111', fontFamily: 'Season Mix, sans-serif' }}>
-                Home<span style={{ color: '#F97316' }}>Guru</span>
-              </span>
+              <img src="https://homeguruworld.com/wp-content/uploads/2022/04/Homeguru-Logo-1.png" alt="HomeGuru" style={{ height: '40px', width: 'auto' }} />
             </a>
-            <p className="font-matter text-[14px] leading-[1.5]" style={{ color: '#999' }}>
-              Born in India. Built for the World.
+            <p className="font-matter text-[14px] leading-[1.7]" style={{ color: '#999', maxWidth: '260px' }}>
+              A revolutionary Ed-tech platform for all your learning needs. Connect with 10,000+ expert tutors across India.
             </p>
+            <div className="flex flex-col gap-2">
+              <a href="tel:+919001990019" className="font-matter text-[13px]" style={{ color: '#888', textDecoration: 'none' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#F97316')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#888')}
+              >+91 90019 90019</a>
+              <a href="mailto:support@homeguruworld.com" className="font-matter text-[13px]" style={{ color: '#888', textDecoration: 'none' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#F97316')}
+                onMouseLeave={e => (e.currentTarget.style.color = '#888')}
+              >support@homeguruworld.com</a>
+              <span className="font-matter text-[13px]" style={{ color: '#888' }}>Jodhpur, Rajasthan, India</span>
+            </div>
             {/* Social icons row */}
             <div className="flex items-center gap-3 mt-2">
               {[
@@ -87,7 +96,7 @@ export default function FooterNew() {
               },
               {
                 title: 'Teach', links: [
-                  { label: 'Join as a Guru', href: '#become-Guru' },
+                  { label: 'Join as a Guru', href: '/become-a-tutor' },
                   { label: 'Tutor Dashboard', href: 'https://dashboard.homeguruworld.com/' },
                 ]
               },
@@ -104,6 +113,8 @@ export default function FooterNew() {
                   { label: 'Terms & Conditions', href: '/terms-of-use' },
                   { label: 'Privacy Policy', href: '/privacy-policy' },
                   { label: 'Refund Policy', href: '/refund-policy' },
+                  { label: 'Learner Policy', href: '/learner-policy' },
+                  { label: 'Tutor Agreement', href: '/tutor-agreement' },
                 ]
               },
             ].map(col => (

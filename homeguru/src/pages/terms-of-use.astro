@@ -3,366 +3,304 @@ import Layout from '../layouts/Layout.astro';
 import HeaderNew from '../components/HeaderNew';
 import FooterNew from '../components/FooterNew';
 
-const collectionItems = [
+const sections = [
   {
-    title: "Personal Data",
-    desc: "Demographic and other personally identifiable information (such as your name and email address) that you voluntarily give to us when choosing to participate in various activities related to the Application, such as chat, posting messages in comment sections or in our forums, liking posts, sending feedback, and responding to surveys. If you choose to share data about yourself via your profile, online chat, or other interactive areas of the Application, please be advised that all data you disclose in these areas is public and your data will be accessible to anyone who accesses the Application."
+    num: "01",
+    title: "Introduction",
+    intro: "Welcome to HomeGuru (I) Private Limited (\"HomeGuru\", \"Company\", \"we\", \"our\", \"us\"). These Terms and Conditions (\"Terms\") govern your access to and use of our platform, including our website, mobile applications, and related services (collectively, the \"Platform\"). By accessing or using the Platform, you agree to be legally bound by these Terms. If you do not agree, you must not use the Platform.",
+    items: [],
+    outro: ""
   },
   {
-    title: "Facebook Permissions",
-    desc: "The Application may by default access your Facebook basic account information, including your name, email, gender, birthday, current city, and profile picture URL, as well as other information that you choose to make public. We may also request access to other permissions related to your account, such as friends, check ins, and likes, and you may choose to grant or deny us access to each individual permission. For more information regarding Facebook permissions, refer to the Facebook Permissions Reference page."
+    num: "02",
+    title: "Nature of Platform",
+    intro: "HomeGuru is a technology-based marketplace that connects learners (\"Students\") with independent educators (\"Tutors\") for academic and non-academic learning.",
+    items: [
+      "HomeGuru does not provide tutoring services directly",
+      "Tutors are independent service providers, not employees, agents, or partners of HomeGuru",
+      "HomeGuru acts only as a facilitator/intermediary"
+    ],
+    outro: ""
   },
   {
-    title: "Geo-Location Information",
-    desc: "We may request access or permission to and track location-based information from your mobile device, either continuously or while you are using the Application, to provide location-based services. If you wish to change our access or permissions, you may do so in your device’s settings."
+    num: "03",
+    title: "User Eligibility",
+    intro: "",
+    items: [
+      "You must be at least 18 years old to use the Platform",
+      "Minors may use the Platform only under parental/guardian supervision",
+      "You agree that all information provided is accurate and complete"
+    ],
+    outro: ""
   },
   {
-    title: "Mobile Device Access",
-    desc: "We may request access or permission to certain features from your mobile device. If you wish to change our access or permissions, you may do so in your device’s settings."
+    num: "04",
+    title: "Account Registration & Security",
+    intro: "",
+    items: [
+      "Users must create an account to access services",
+      "You are responsible for maintaining confidentiality of login credentials",
+      "You are fully responsible for all activities under your account",
+      "HomeGuru shall not be liable for unauthorized account access"
+    ],
+    outro: ""
   },
   {
-    title: "Mobile Device Data",
-    desc: "Device information such as your mobile device ID number, model, and manufacturer, version of your operating system, phone number, country, location, and any other data you choose to provide."
+    num: "05",
+    title: "Services Offered",
+    intro: "The Platform enables:",
+    items: [
+      "Discovery of Tutors",
+      "Booking and scheduling of sessions",
+      "Communication between Students and Tutors",
+      "Payment processing"
+    ],
+    outro: "HomeGuru does not guarantee learning outcomes, tutor performance, or session quality."
   },
   {
-    title: "Push Notifications",
-    desc: "We may request to send you push notifications regarding your account or the Application. If you wish to opt-out from receiving these types of communications, you may turn them off in your device’s settings."
-  }
-];
-
-const useItems = [
-  "Assist law enforcement and respond to requests made by them.",
-  "Compile anonymous statistical data and analysis for use internally or with third parties.",
-  "Create and manage your account.",
-  "Email you regarding your account.",
-  "Enable user-to-user communications.",
-  "Generate a personal profile about you to make future visits to the Application more personalized.",
-  "Increase the efficiency and operation of the Application.",
-  "Monitor and analyze usage and trends to improve your experience with the Application.",
-  "Notify you of updates to the Application.",
-  "Perform other business activities as needed.",
-  "Prevent fraudulent transactions, monitor against theft, and protect against criminal activity.",
-  "Request feedback and contact you about your use of the Application.",
-  "Resolve disputes and troubleshoot problems.",
-  "Respond to product and customer service requests.",
-  "Solicit support for the Application.",
-  "You consent to the use of the information provided by you to share updates or information via WhatsApp."
-];
-
-const disclosureItems = [
-  { title: "By Law or to Protect Rights", desc: "If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation. This includes exchanging information with other entities for fraud protection and credit risk reduction." },
-  { title: "Third-Party Service Providers", desc: "We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance." },
-  { title: "Marketing Communications", desc: "With your consent, or with an opportunity for you to withdraw consent, we may share your information with third parties for marketing purposes, as permitted by law." },
-  { title: "Interactions with Other Users", desc: "If you interact with other users of the Application, those users may see your name, profile photo, and descriptions of your activity, including sending invitations to other users, chatting with other users, liking posts, following blogs." },
-  { title: "Online Postings", desc: "When you post comments, contributions or other content to the Applications, your posts may be viewed by all users and may be publicly distributed outside the Application in perpetuity." },
-  { title: "Third-Party Advertisers", desc: "We may use third-party advertising companies to serve ads when you visit the Application. These companies may use information about your visits to the Application and other websites that are contained in web cookies in order to provide advertisements about goods and services of interest to you." },
-  { title: "Affiliates", desc: "We may share your information with our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include our parent company and any subsidiaries, joint venture partners or other companies that we control or that are under common control with us." },
-  { title: "Business Partners", desc: "We may share your information with our business partners to offer you certain products, services or promotions." },
-  { title: "Offer Wall", desc: "The Application may display a third-party-hosted “offer wall.” Such an offer wall allows third-party advertisers to offer virtual currency, gifts, or other items to users in return for acceptance and completion of an advertisement offer. Such an offer wall may appear in the Application and be displayed to you based on certain data, such as your geographic area or demographic information. When you click on an offer wall, you will leave the Application. A unique identifier, such as your user ID, will be shared with the offer wall provider in order to prevent fraud and properly credit your account." },
-  { title: "Other Third Parties", desc: "We may share your information with advertisers and investors for the purpose of conducting general business analysis. We may also share your information with such third parties for marketing purposes, as permitted by law." }
-];
-
-const trackingItems = [
-  { title: "Cookies and Web Beacons", desc: "We may use cookies, web beacons, tracking pixels, and other tracking technologies on the Application to help customize the Application and improve your experience. When you access the Application, your personal information is not collected through the use of tracking technology. Most browsers are set to accept cookies by default. You can remove or reject cookies but be aware that such action could affect the availability and functionality of the Application. You may not decline web beacons. However, they can be rendered ineffective by declining all cookies or by modifying your web browser’s settings to notify you each time a cookie is tendered, permitting you to accept or decline cookies on an individual basis." },
-  { title: "Internet-Based Advertising", desc: "Additionally, we may use third-party software to serve ads on the Application, implement email marketing campaigns, and manage other interactive marketing initiatives. This third-party software may use cookies or similar tracking technology to help manage and optimize your online experience with us. For more information about opting-out of interest-based ads, visit the Network Advertising Initiative Opt-Out Tool or Digital Advertising Alliance Opt-Out Tool." },
-  { title: "Website Analytics", desc: "We may also partner with selected third-party vendors, such as Google Analytics etc. to allow tracking technologies and remarketing services on the Application through the use of first party cookies and third-party cookies, to, among other things, analyze and track users’ use of the Application, determine the popularity of certain content, and better understand online activity. By accessing the Application, you consent to the collection and use of your information by these third-party vendors. You are encouraged to review their privacy policy and contact them directly for responses to your questions. We do not transfer personal information to these third-party vendors. You should be aware that getting a new computer, installing a new browser, upgrading an existing browser, or erasing or otherwise altering your browser’s cookies files may also clear certain opt-out cookies, plug-ins, or settings." },
-  { title: "Third-Party Websites", desc: "The Application may contain links to third-party websites and applications of interest, including advertisements and external services, that are not affiliated with us. Once you have used these links to leave the Application, any information you provide to these third parties is not covered by this Tutor’s Policy, and we cannot guarantee the safety and privacy of your information. Before visiting and providing any information to any third-party websites, you should inform yourself of the privacy policies and practices (if any) of the third party responsible for that website, and should take those steps necessary to, in your discretion, protect the privacy of your information. We are not responsible for the content or privacy and security practices and policies of any third parties, including other sites, services or applications that may be linked to or from the Application." }
-];
-
-const legalItems = [
-  { title: "Limited Liability", desc: "TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT SHALL HOMEGURU, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS, BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, LOSSES OR EXPENSES OR CONSEQUENTIAL DAMAGES WHATSOEVER RESULTING FROM ANY (I) ERRORS, MISTAKES, OR INACCURACIES OF USER CONTENT OR ANY OTHER CONTENT AVAILABLE AT HOMEGURU, (II) PERSONAL INJURY OR PROPERTY DAMAGE, OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF OUR HOMEGURU PLATFORMS, (III) ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (IV) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM THE HOMEGURU PLATFORM, (IV) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE, WHICH MAY BE TRANSMITTED TO OR THROUGH OUR HOMEGURU PLATFORMS BY ANY THIRD PARTY, AND/OR (V) ANY ERRORS OR OMISSIONS IN ANY USER CONTENT OR ANY OTHER CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF YOUR USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA THE HOMEGURU PLATFORM, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT HOMEGURU IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. WE UNDERSTAND THAT, IN SOME JURISDICTIONS, WARRANTIES, DISCLAIMERS AND CONDITIONS MAY APPLY THAT CANNOT BE LEGALLY EXCLUDED, IF THAT IS TRUE IN YOUR JURISDICTION, THEN TO THE EXTENT PERMITTED BY LAW, HOMEGURU LIMITS ITS LIABILITY FOR ANY CLAIMS UNDER THOSE WARRANTIES OR CONDITIONS TO EITHER SUPPLYING YOU THE HOMEGURU PLATFORMS AGAIN. YOU SPECIFICALLY ACKNOWLEDGE THAT HOMEGURU SHALL NOT BE LIABLE FOR USER CONTENT OR THE DEFAMATORY, OFFENSIVE, OR ILLEGAL CONDUCT OF ANY THIRD PARTY AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU. THE HOMEGURU PLATFORM IS CONTROLLED AND OFFERED BY HOMEGURU FROM ITS FACILITIES IN INDIA. HOMEGURU MAKES NO REPRESENTATIONS THAT THE HOMEGURU PLATFORM IS APPROPRIATE OR AVAILABLE FOR USE IN OTHER LOCATIONS. THOSE WHO ACCESS OR USE THE HOMEGURU PLATFORM FROM OTHER JURISDICTIONS DO SO AT THEIR OWN VOLITION AND ARE RESPONSIBLE FOR COMPLIANCE WITH LOCAL LAW." },
-  { title: "Indemnity", desc: "To the extent permitted by applicable law, you agree to defend, indemnify and hold harmless Homeguru, its parent corporation, officers, directors, employees and agents, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney’s fees) arising from: (i) your use of and access to the Homeguru Platform; (ii) your violation of any term of these Terms and Conditions; (iii) your violation of any third party right, including without limitation any copyright, property, or privacy right; (iv) any claim that your User Content caused damage to a third party; or (v) violation of any applicable laws. This defence and indemnification obligation will survive these Terms and Conditions and your use of the Homeguru Platform." },
-  { title: "Security of Your Information", desc: "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse. Any information disclosed online is vulnerable to interception and misuse by unauthorized parties. Therefore, we cannot guarantee complete security if you provide personal information." },
-  { title: "Your Consent", desc: "By using the Application, you are consenting to our processing of your information as set forth in this Tutor’s Policy now and as amended by us." },
-  { title: "Governing Law & Jurisdiction", desc: "In the event of any dispute arising between the parties with respect to the Homeguru App online sessions and/or offline sessions, the same shall be referred to the Sole Arbitrator and the arbitration shall be in accordance with Arbitration and Conciliation Act of 1996. The language of arbitration proceedings shall be English. The seat and place of arbitration shall be Mumbai and the decision of the Arbitrator shall be final and binding on both parties herein. In addition to the foregoing, any disputes arising under this Tutor’s Policy shall be governed by the laws of India." }
-];
-
-const tutorItems = [
-  "The Tutor concerned shall be given access of all online/offline tutorials and learning services i.e. at Homeguru app as well as the offline session.",
-  "The Tutor concerned shall be given access to file storage and sharing services through Cloud Services.",
-  "Tutors shall be expected to always encourage the Students to maintain strict discipline and decorum during the online and offline sessions. Tutors shall facilitate the learning process and interact in a co-operative manner with the Students.",
-  "The Tutor shall start and end the session at the allotted fixed time. As per the applicable terms and condition of the Agreement between Tutor, Learner and Home Guru.",
-  "We at Home guru shall not be legally liable for any incident that occurs during any online and offline sessions, the same shall be a responsibility of the Student and the Tutor, solely.",
-  "The Tutor shall treat every Minor with empathy and respect, regardless of his/her race, colour, gender, sexuality, language, religion, religious belief, heritage, political/other opinion, national/ethnic/social origin or property/disability/birth/other status; listen to them and respect their views.",
-  "Good communication is the vehicle for learning and essential for further development of Minor. Using any form of language or behaviour towards Minor that is inappropriate, demotivating, harassing, abusive, sexually provocative, demeaning, intimidating, offensive, discriminatory or culturally insensitive shall not be tolerated; further, any communication or behaviour while interacting with Minor shall not, in any manner whatsoever, induce or support physical or sexual relationships with Minor or portray use of or encourage the use of alcohol, drugs, cigarettes or other intoxicating or restricted substances. The Company understands that there may be instances when there are exchange of ideas and opinions which is essential in the learning process, while it is agreed that individuals have the right to voice their opinions, the Company has zero tolerance towards any form of communication or behaviour stated hereinabove.",
-  "Furthermore, you confirm that the User Content uploaded by you is not: False, inaccurate or misleading; Infringe any third party’s copyright, patent, trademark, trade secret or other proprietary rights or rights of publicity or privacy; Violate any law, statue, ordinance or regulation; Defamatory, unlawfully threatening or unlawfully harassing; Obscene or contain pornography. Contain any viruses, trojan horses, worms, cancelbots or other computer programming routines that may damage, detrimentally interfere with, surreptitiously intercept or expropriate any system, data or personal information.",
-  "You understand and confirm that you shall not during your use of the Homeguru Platforms at any time post or publish any content, comments or act in any way which will amount to harassment of any other User, whether a student or a tutor. If at any given point it comes to the notice of Homeguru that you are engaged in any kind of harassment of other Users, then in such a case you agree that Homeguru shall have the sole right to suspend/terminate your account with immediate effect and without any notice of such suspension or termination and we also reserve the right in our sole discretion to initiate any legal proceedings against you in such cases",
-  "You shall be solely responsible for your own User Content and the consequences of submitting and publishing such User Content on the Homeguru Platform. You affirm, represent, and warrant that you own or have the necessary licenses, rights, consents, and permissions to publish the User Content that you submit; and you grant limited license to Homeguru to all patent, trademark, trade secret, copyright or other proprietary rights in and to such User Content for publication on the Homeguru Platform pursuant to these Terms and Conditions for the duration the said User Content is available on Homeguru Platform.",
-  "Homeguru shall be charging a 15% flat rate (“commission”) on the overall fees received by the Tutor on hourly basis. Homeguru shall revise the commission rate at any point in time as it deems fit and shall duly inform the Tutor on such change."
+    num: "06",
+    title: "Payments, Fees & Commission",
+    intro: "",
+    items: [
+      "Students agree to pay applicable session fees",
+      "Tutors may be charged commission and/or subscription fees",
+      "Payments are processed via third-party payment gateways",
+      "HomeGuru is not responsible for payment gateway failures"
+    ],
+    outro: "All payments are final and non-refundable, unless explicitly stated otherwise."
+  },
+  {
+    num: "07",
+    title: "Cancellation & Refund Policy",
+    intro: "",
+    items: [
+      "Cancellation/rescheduling policies may vary per session",
+      "No-shows may result in full fee forfeiture",
+      "Refunds, if applicable, shall be processed as per platform policy",
+      "Abuse of cancellation policies may lead to account suspension"
+    ],
+    outro: ""
+  },
+  {
+    num: "08",
+    title: "AI Usage & Platform Intelligence",
+    intro: "HomeGuru may use Artificial Intelligence (AI) to:",
+    items: [
+      "Match Students with Tutors",
+      "Provide recommendations",
+      "Optimize learning experience"
+    ],
+    outro: "You acknowledge that AI outputs may not always be accurate and HomeGuru does not guarantee results from AI-based suggestions."
+  },
+  {
+    num: "09",
+    title: "User Conduct",
+    intro: "You agree not to:",
+    items: [
+      "Violate any applicable laws",
+      "Harass, abuse, or harm other users",
+      "Share false, misleading, or inappropriate content",
+      "Circumvent the Platform to transact outside HomeGuru",
+      "Attempt to hack, disrupt, or misuse the Platform"
+    ],
+    outro: "Violation may result in immediate suspension or termination."
+  },
+  {
+    num: "10",
+    title: "Intellectual Property",
+    intro: "All content on the Platform including branding, logos, technology, design, and content is the exclusive property of HomeGuru.",
+    items: [],
+    outro: "Unauthorized use, copying, or distribution is strictly prohibited."
+  },
+  {
+    num: "11",
+    title: "Privacy & Data Protection",
+    intro: "Your data is handled in accordance with our Privacy Policy and applicable laws. By using the Platform, you consent to:",
+    items: [
+      "Collection and use of your data",
+      "Storage and processing for service improvement"
+    ],
+    outro: ""
+  },
+  {
+    num: "12",
+    title: "Disclaimer of Warranties",
+    intro: "The Platform is provided on an \"as is\" and \"as available\" basis. HomeGuru makes no warranties regarding:",
+    items: [
+      "Service availability",
+      "Tutor quality",
+      "Accuracy of content",
+      "Learning outcomes"
+    ],
+    outro: ""
+  },
+  {
+    num: "13",
+    title: "Limitation of Liability",
+    intro: "To the maximum extent permitted by law:",
+    items: [
+      "HomeGuru shall not be liable for any indirect, incidental, or consequential damages",
+      "Total liability shall not exceed the amount paid by the user in the last 3 months"
+    ],
+    outro: ""
+  },
+  {
+    num: "14",
+    title: "Indemnification",
+    intro: "You agree to indemnify and hold harmless HomeGuru from any claims, damages, losses, or liabilities arising from:",
+    items: [
+      "Your use of the Platform",
+      "Violation of these Terms",
+      "Disputes between Students and Tutors"
+    ],
+    outro: ""
+  },
+  {
+    num: "15",
+    title: "Termination",
+    intro: "HomeGuru reserves the right to:",
+    items: [
+      "Suspend or terminate accounts at its sole discretion",
+      "Remove content or restrict access"
+    ],
+    outro: "Users may also discontinue use at any time."
+  },
+  {
+    num: "16",
+    title: "International Use",
+    intro: "Users accessing the Platform from outside India are responsible for compliance with their local laws and regulations.",
+    items: [],
+    outro: ""
+  },
+  {
+    num: "17",
+    title: "Modifications to Terms",
+    intro: "HomeGuru reserves the right to modify these Terms at any time.",
+    items: [],
+    outro: "Continued use of the Platform after changes constitutes acceptance of updated Terms."
+  },
+  {
+    num: "18",
+    title: "Governing Law & Jurisdiction",
+    intro: "These Terms shall be governed by the laws of India.",
+    items: [],
+    outro: "All disputes shall be subject to the exclusive jurisdiction of courts in Jodhpur, Rajasthan."
+  },
+  {
+    num: "19",
+    title: "Dispute Resolution",
+    intro: "In case of disputes:",
+    items: [
+      "Parties shall first attempt amicable resolution",
+      "Failing which, disputes shall be resolved under applicable Indian laws"
+    ],
+    outro: ""
+  },
+  {
+    num: "20",
+    title: "Contact Information",
+    intro: "For any queries or concerns, reach us at:",
+    items: [
+      "support@homeguruworld.com",
+      "www.homeguruworld.com"
+    ],
+    outro: ""
+  },
 ];
 ---
 
 <Layout title="Terms & Conditions | HomeGuru">
   <HeaderNew client:load />
 
-  <main class="flex-1 bg-[#fafafa]" style="font-family: Matter, sans-serif;">
+  <main style="font-family: Matter, sans-serif; background: #fff;">
 
     {/* ── Hero ── */}
-    <section class="relative pt-40 pb-20 overflow-hidden">
-      <div
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] blur-[120px] opacity-25 pointer-events-none"
-        style="background: radial-gradient(ellipse, #A5BBFC 0%, #D5E2FF 50%, transparent 70%);"
-        aria-hidden="true"
-      />
-      <div class="relative z-10 flex flex-col items-center text-center gap-5 w-[85%] md:w-9/12 max-w-[760px] mx-auto">
-        <span
-          class="font-matter text-[10px] font-semibold uppercase tracking-[3.5px] px-4 py-1.5 rounded-full"
-          style="color:#F97316; background:rgba(249,115,22,0.07); border:1px solid rgba(249,115,22,0.18);"
-        >
-          Legal
-        </span>
-        <h1 class="font-season-mix text-[42px] md:text-[64px] leading-[1.05] tracking-tight text-[#111]">
-          Terms &amp; Conditions
-        </h1>
-        <p class="font-matter text-[#777] text-base md:text-[17px] leading-[1.8] max-w-[540px]">
-          HomeGuru World Pvt Ltd (“we” or “us” or “our”) a private limited Company incorporated under the Companies Act, 2013 respects the privacy of our users. This policy explains how we collect, use, disclose, and safeguard your information.
+    <section style="padding-top: 140px; padding-bottom: 72px; border-bottom: 1px solid #F0F0F0;">
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <p style="font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #999; margin-bottom: 20px;">
+          Legal · HomeGuru (I) Private Limited
         </p>
-        <div class="flex items-center gap-2 mt-1">
-          <div class="w-1 h-1 rounded-full" style="background:#CBCBCB;"></div>
-          <span class="font-matter text-[11px] text-[#BBBBBB] tracking-wide">Last updated: 2025</span>
-          <div class="w-1 h-1 rounded-full" style="background:#CBCBCB;"></div>
+        <h1 class="font-season-mix" style="font-size: clamp(40px, 6vw, 64px); line-height: 1.04; letter-spacing: -1.5px; color: #111; margin: 0 0 24px 0;">
+          Terms &amp;<br/>Conditions
+        </h1>
+        <p style="font-size: 17px; line-height: 1.75; color: #666; max-width: 520px; margin: 0 0 28px 0;">
+          Please read these Terms carefully before using our platform. By accessing HomeGuru, you agree to be bound by the following terms.
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <span style="font-size: 12px; color: #999;">Effective Date: 1st April 2026</span>
+          <span style="width: 3px; height: 3px; border-radius: 50%; background: #D0D0D0; display: inline-block;"></span>
+          <span style="font-size: 12px; color: #999;">20 Sections</span>
         </div>
       </div>
     </section>
 
-    {/* ── Divider ── */}
-    <div class="w-[85%] md:w-9/12 max-w-[760px] mx-auto" style="height:1px; background:#EBEBEB;"></div>
-
     {/* ── Content ── */}
-    <section class="mx-auto w-[85%] md:w-9/12 max-w-[760px] py-16 flex flex-col gap-8">
+    <section style="max-width: 680px; margin: 0 auto; padding: 0 24px 120px 24px;">
 
-      {/* Intro Text Block */}
-      <div class="font-matter text-[#444] text-[15px] leading-[1.85] flex flex-col gap-4">
-        <p>
-          HomeGuru World Pvt Ltd (“we” or “us” or “our”) a private limited Company incorporated under the Companies Act, 2013, having its registered office at 402, Dev Enclave, Chitrakar Ketkar Marg, Vile Parle (East) Mumbai Mumbai City MH 400057 IN India operating under the brand name “Homeguru” respects the privacy of our users (“user” or “you”). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our mobile application (the “Application”). Please read this Homeguru App Privacy and Tutor’s Consent Policy (“Tutor’s Policy”), carefully. We are committed to your privacy and have an online as well as offline presence.
+      {sections.map((section, i) => (
+        <div style={`padding: 52px 0; ${i < sections.length - 1 ? 'border-bottom: 1px solid #F2F2F2;' : ''}`}>
+
+          {/* Section label + title */}
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: #C0C0C0; text-transform: uppercase; flex-shrink: 0;">
+              {section.num}
+            </span>
+            <h2 class="font-season-mix" style="font-size: 22px; color: #111; line-height: 1.2; letter-spacing: -0.3px; margin: 0;">
+              {section.title}
+            </h2>
+          </div>
+
+          {/* Body */}
+          <div style="padding-left: 36px;">
+            {section.intro && (
+              <p style="font-size: 15px; line-height: 1.8; color: #444; margin: 0 0 16px 0;">
+                {section.intro}
+              </p>
+            )}
+
+            {section.items.length > 0 && (
+              <ul style="margin: 0 0 16px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;">
+                {section.items.map((item) => (
+                  <li style="display: flex; align-items: flex-start; gap: 12px;">
+                    <span style="margin-top: 9px; flex-shrink: 0; width: 4px; height: 4px; border-radius: 50%; background: #C8C8C8; display: inline-block;"></span>
+                    <span style="font-size: 15px; line-height: 1.75; color: #444;">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {section.outro && (
+              <p style="font-size: 14px; line-height: 1.75; color: #888; margin: 0; padding-top: 14px; border-top: 1px solid #F0F0F0;">
+                {section.outro}
+              </p>
+            )}
+          </div>
+
+        </div>
+      ))}
+
+      {/* Acknowledgement */}
+      <div style="margin-top: 16px; padding: 32px 36px; background: #F7F7F7; border-radius: 16px;">
+        <p style="font-size: 14px; line-height: 1.8; color: #666; margin: 0; text-align: center;">
+          By using HomeGuru, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
         </p>
-        <p>
-          We reserve the right to make changes to this Tutor’s Policy at any time and for any reason. We will alert you about any changes by updating the “Last updated” date of this Tutor’s Policy. You are encouraged to periodically review this Tutor’s Policy to stay informed of updates. You will be deemed to have been made aware of, will be subject to, and will be deemed to have accepted the changes in any revised Tutor’s Policy by your continued use of the Application after the date such revised Tutor’s Policy is posted.
+      </div>
+
+      {/* Contact */}
+      <div style="margin-top: 16px; padding: 32px 36px; border: 1px solid #EBEBEB; border-radius: 16px; display: flex; flex-direction: column; gap: 6px;">
+        <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #999; margin: 0;">
+          Questions?
         </p>
-      </div>
-
-      {/* Collection of Your Information */}
-      <div class="group flex flex-col gap-0 rounded-[24px] overflow-hidden" style="border:1px solid #E8E8E8;">
-        <div class="flex items-center gap-4 px-8 py-6" style="background:#fff; border-bottom:1px solid #F0F0F0;">
-          <div class="w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0" style="background:#EEF2FF; border:1px solid #C7D2FE;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z" fill="#6366F1"/>
-            </svg>
-          </div>
-          <div>
-            <p class="font-matter text-[10px] font-semibold uppercase tracking-[2.5px] text-[#9CA3AF] mb-0.5">Section 01</p>
-            <h2 class="font-season-mix text-[22px] md:text-[26px] text-[#111] leading-tight">Collection of Your Information</h2>
-          </div>
-        </div>
-        <div class="flex flex-col gap-5 px-8 py-7" style="background:#FAFAFA;">
-          <p class="font-matter text-[#444] text-[15px] leading-[1.85] mb-2">
-            We may collect information about you in a variety of ways. The information we may collect via the Application depends on the content and materials you use, and includes:
-          </p>
-          {collectionItems.map((item, index) => (
-            <>
-              {index > 0 && <div style="height:1px; background:#EBEBEB;"></div>}
-              <div class="flex items-start gap-4">
-                <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center" style="background:#EEF2FF;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z" stroke="#6366F1" stroke-width="8" fill="none"/>
-                  </svg>
-                </div>
-                <div class="flex flex-col">
-                  <span class="font-matter font-semibold text-[#111] text-[15px] mb-1">{item.title}</span>
-                  <p class="font-matter text-[#444] text-[15px] leading-[1.85]">{item.desc}</p>
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
-      </div>
-
-      {/* Use of Your Information */}
-      <div class="group flex flex-col gap-0 rounded-[24px] overflow-hidden" style="border:1px solid #E8E8E8;">
-        <div class="flex items-center gap-4 px-8 py-6" style="background:#fff; border-bottom:1px solid #F0F0F0;">
-          <div class="w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0" style="background:#ECFDF5; border:1px solid #A7F3D0;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M226.83,74.83l-120,120a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.31L101.17,178.17l114.34-114.34a8,8,0,0,1,11.32,11.31Z" fill="#10B981" />
-            </svg>
-          </div>
-          <div>
-            <p class="font-matter text-[10px] font-semibold uppercase tracking-[2.5px] text-[#9CA3AF] mb-0.5">Section 02</p>
-            <h2 class="font-season-mix text-[22px] md:text-[26px] text-[#111] leading-tight">Use of Your Information</h2>
-          </div>
-        </div>
-        <div class="flex flex-col gap-5 px-8 py-7" style="background:#FAFAFA;">
-          <p class="font-matter text-[#444] text-[15px] leading-[1.85] mb-2">
-            Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Application to:
-          </p>
-          <ul class="flex flex-col gap-3">
-            {useItems.map((item) => (
-              <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 flex-shrink-0" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z" stroke="#10B981" stroke-width="8" fill="none"/>
-                </svg>
-                <span class="font-matter text-[#555] text-[14px] leading-[1.75]">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Disclosure of Information */}
-      <div class="group flex flex-col gap-0 rounded-[24px] overflow-hidden" style="border:1px solid #E8E8E8;">
-        <div class="flex items-center gap-4 px-8 py-6" style="background:#fff; border-bottom:1px solid #F0F0F0;">
-          <div class="w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0" style="background:#FFF7ED; border:1px solid #FDDCBB;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" stroke="#F97316" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="128" y1="80" x2="128" y2="128" stroke="#F97316" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="128" y1="176" x2="128" y2="176" stroke="#F97316" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <p class="font-matter text-[10px] font-semibold uppercase tracking-[2.5px] text-[#9CA3AF] mb-0.5">Section 03</p>
-            <h2 class="font-season-mix text-[22px] md:text-[26px] text-[#111] leading-tight">Disclosure of Information</h2>
-          </div>
-        </div>
-        <div class="flex flex-col gap-5 px-8 py-7" style="background:#FAFAFA;">
-          <p class="font-matter text-[#444] text-[15px] leading-[1.85] mb-2">
-            We may share information we have collected about you in certain situations. Your information may be disclosed as follows:
-          </p>
-          {disclosureItems.map((item, index) => (
-            <>
-              {index > 0 && <div style="height:1px; background:#EBEBEB;"></div>}
-              <div class="flex items-start gap-4">
-                <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center" style="background:#FFF7ED;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z" stroke="#F97316" stroke-width="8" fill="none"/>
-                  </svg>
-                </div>
-                <div class="flex flex-col">
-                  <span class="font-matter font-semibold text-[#111] text-[15px] mb-1">{item.title}</span>
-                  <p class="font-matter text-[#444] text-[15px] leading-[1.85]">{item.desc}</p>
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
-      </div>
-
-      {/* Tracking Technologies & Ads */}
-      <div class="group flex flex-col gap-0 rounded-[24px] overflow-hidden" style="border:1px solid #E8E8E8;">
-        <div class="flex items-center gap-4 px-8 py-6" style="background:#fff; border-bottom:1px solid #F0F0F0;">
-          <div class="w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0" style="background:#F3E8FF; border:1px solid #D8B4FE;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM88,140a12,12,0,1,1,12-12A12,12,0,0,1,88,140Zm40-28a12,12,0,1,1,12-12A12,12,0,0,1,128,112Zm40,28a12,12,0,1,1,12-12A12,12,0,0,1,168,140Z" fill="#A855F7"/>
-            </svg>
-          </div>
-          <div>
-            <p class="font-matter text-[10px] font-semibold uppercase tracking-[2.5px] text-[#9CA3AF] mb-0.5">Section 04</p>
-            <h2 class="font-season-mix text-[22px] md:text-[26px] text-[#111] leading-tight">Tracking Technologies & Third Parties</h2>
-          </div>
-        </div>
-        <div class="flex flex-col gap-5 px-8 py-7" style="background:#FAFAFA;">
-          {trackingItems.map((item, index) => (
-            <>
-              {index > 0 && <div style="height:1px; background:#EBEBEB;"></div>}
-              <div class="flex items-start gap-4">
-                <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center" style="background:#F3E8FF;">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z" stroke="#A855F7" stroke-width="8" fill="none"/>
-                  </svg>
-                </div>
-                <div class="flex flex-col">
-                  <span class="font-matter font-semibold text-[#111] text-[15px] mb-1">{item.title}</span>
-                  <p class="font-matter text-[#444] text-[15px] leading-[1.85]">{item.desc}</p>
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
-      </div>
-
-      {/* Legal & Security */}
-      <div class="group flex flex-col gap-0 rounded-[24px] overflow-hidden" style="border:1px solid #E8E8E8;">
-        <div class="flex items-center gap-4 px-8 py-6" style="background:#fff; border-bottom:1px solid #F0F0F0;">
-          <div class="w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0" style="background:#FEF2F2; border:1px solid #FECACA;">
-             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M112,24l96,96a16,16,0,0,1,0,22.63l-80,80a16,16,0,0,1-22.63,0l-96-96A16,16,0,0,1,4.69,115.31L100.69,19.31A16,16,0,0,1,112,24Zm0,16L16,136l80,80,96-96Z" fill="#EF4444"/>
-            </svg>
-          </div>
-          <div>
-            <p class="font-matter text-[10px] font-semibold uppercase tracking-[2.5px] text-[#9CA3AF] mb-0.5">Section 05</p>
-            <h2 class="font-season-mix text-[22px] md:text-[26px] text-[#111] leading-tight">Legal & Security</h2>
-          </div>
-        </div>
-        <div class="flex flex-col gap-5 px-8 py-7" style="background:#FAFAFA;">
-          {legalItems.map((item, index) => (
-            <>
-              {index > 0 && <div style="height:1px; background:#EBEBEB;"></div>}
-              <div class="flex items-start gap-4">
-                <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-[10px] flex items-center justify-center" style="background:#FEF2F2;">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="none">
-                    <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z" stroke="#EF4444" stroke-width="8" fill="none"/>
-                  </svg>
-                </div>
-                <div class="flex flex-col">
-                  <span class="font-matter font-semibold text-[#111] text-[15px] mb-1">{item.title}</span>
-                  <p class="font-matter text-[#444] text-[15px] leading-[1.85]" style={item.title === 'Limited Liability' ? "text-transform: uppercase; font-size: 13px;" : ""}>{item.desc}</p>
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
-      </div>
-
-       {/* General Terms & Conditions For Consenting Tutors */}
-      <div class="group flex flex-col gap-0 rounded-[24px] overflow-hidden" style="border:1px solid #E8E8E8;">
-        <div class="flex items-center gap-4 px-8 py-6" style="background:#fff; border-bottom:1px solid #F0F0F0;">
-          <div class="w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0" style="background:#F0F9FF; border:1px solid #BAE6FD;">
-             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z" fill="#0EA5E9"/>
-            </svg>
-          </div>
-          <div>
-            <p class="font-matter text-[10px] font-semibold uppercase tracking-[2.5px] text-[#9CA3AF] mb-0.5">Section 06</p>
-            <h2 class="font-season-mix text-[22px] md:text-[26px] text-[#111] leading-tight">General Terms & Conditions For Consenting Tutors</h2>
-          </div>
-        </div>
-        <div class="flex flex-col gap-5 px-8 py-7" style="background:#FAFAFA;">
-          <ul class="flex flex-col gap-4">
-            {tutorItems.map((item) => (
-              <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mt-0 flex-shrink-0" width="18" height="18" viewBox="0 0 256 256" fill="none">
-                  <circle cx="128" cy="128" r="80" fill="#E0F2FE" />
-                  <path d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z" fill="#0EA5E9"/>
-                </svg>
-                <span class="font-matter text-[#555] text-[14px] leading-[1.75]">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Contact card */}
-      <div
-        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 px-8 py-7 rounded-[24px]"
-        style="background:#fff; border:1px solid #E8E8E8;"
-      >
-        <div class="flex items-start gap-4">
-          <div class="mt-0.5 w-10 h-10 rounded-[12px] flex items-center justify-center flex-shrink-0" style="background:#F6F6F6; border:1px solid #EBEBEB;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256" fill="none">
-              <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z" stroke="#111" stroke-width="8" fill="none"/>
-            </svg>
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="font-season-mix text-[20px] text-[#111] leading-tight">Still have questions?</p>
-            <p class="font-matter text-[13px] text-[#888] leading-relaxed">We appreciate your understanding and look forward to supporting your journey on HomeGuru.</p>
-          </div>
-        </div>
+        <p class="font-season-mix" style="font-size: 22px; color: #111; margin: 4px 0 8px 0;">Still have questions?</p>
+        <p style="font-size: 14px; color: #888; margin: 0 0 20px 0; line-height: 1.7;">
+          We're here to help. Reach out and we'll get back to you.
+        </p>
         <a
           href="mailto:support@homeguruworld.com"
-          class="inline-flex items-center gap-2.5 font-matter font-semibold text-[13px] px-5 py-3 rounded-full flex-shrink-0 transition-opacity duration-200 hover:opacity-75 active:scale-95"
-          style="background:#111; color:#fff;"
+          style="display: inline-flex; align-items: center; gap: 8px; background: #111; color: #fff; font-size: 13px; font-weight: 600; padding: 11px 22px; border-radius: 100px; text-decoration: none; width: fit-content; transition: opacity 0.2s;"
+          onmouseover="this.style.opacity='0.75'"
+          onmouseout="this.style.opacity='1'"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 256 256" fill="none">
-            <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z" stroke="white" stroke-width="12" fill="none"/>
-          </svg>
           support@homeguruworld.com
         </a>
       </div>

@@ -24,7 +24,7 @@ export default function SecuritySection() {
             <li key={item} style={{ fontFamily: 'Season Mix, sans-serif', fontWeight: 400, fontSize: '16px', color: '#0a0a0a' }}>{item}</li>
           ))}
         </ul>
-        <a href="#become-guru" style={{ marginTop: '8px' }}>
+        <a href="/become-a-tutor" style={{ marginTop: '8px' }}>
           <button style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0a0a0a', color: '#fff', fontFamily: 'Matter, sans-serif', fontWeight: 600, fontSize: '16px', padding: '18px 32px', borderRadius: '12px', border: 'none', cursor: 'pointer', opacity: 1, transition: 'opacity 0.2s' }}
             onMouseEnter={e => (e.currentTarget.style.opacity = '0.75')}
             onMouseLeave={e => (e.currentTarget.style.opacity = '1')}>
