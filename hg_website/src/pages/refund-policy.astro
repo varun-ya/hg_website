@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderNew from '../components/HeaderNew';
+import FooterNew from '../components/FooterNew';
+
+const sections = [
+  {
+    num: "01",
+    title: "For Learners",
+    intro: "If you are not satisfied with your Tutor, you may request a Tutor Replacement. If still not satisfied after replacement, you may request a refund.",
+    items: [
+      "Indian users will be charged a 5% platform fee on the refund amount",
+      "International users will be charged a 10% platform fee on the refund amount",
+      "The remaining amount will be refunded accordingly"
+    ],
+    outro: "Refunds are not applicable for no-shows, misuse, or sessions already consumed."
+  },
+  {
+    num: "02",
+    title: "For Tutors",
+    intro: "Tutors must pay a ₹499 listing fee valid for 365 days. This fee is non-refundable and only provides profile visibility.",
+    items: [
+      "HomeGuru does not guarantee students, bookings, or earnings",
+      "Leads may be shared via app or WhatsApp notifications",
+      "Tutors are responsible for converting leads and maintaining profile quality",
+      "Payments for completed sessions will be processed weekly, subject to platform commission"
+    ],
+    outro: ""
+  },
+  {
+    num: "03",
+    title: "General Terms",
+    intro: "HomeGuru reserves the right to approve or reject refund requests and take action in case of misuse.",
+    items: [],
+    outro: ""
+  },
+];
+---
+
+<Layout title="Refund Policy | HomeGuru">
+  <HeaderNew client:load />
+
+  <main style="font-family: Matter, sans-serif; background: #fff;">
+
+    {/* ── Hero ── */}
+    <section style="padding-top: 140px; padding-bottom: 72px; border-bottom: 1px solid #F0F0F0;">
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <p style="font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #999; margin-bottom: 20px;">
+          Legal · HomeGuru (I) Private Limited
+        </p>
+        <h1 class="font-season-mix" style="font-size: clamp(40px, 6vw, 64px); line-height: 1.04; letter-spacing: -1.5px; color: #111; margin: 0 0 24px 0;">
+          Refund<br/>Policy
+        </h1>
+        <p style="font-size: 17px; line-height: 1.75; color: #666; max-width: 520px; margin: 0 0 28px 0;">
+          This policy outlines the refund terms for learners and tutors on the HomeGuru platform. Please read carefully before making any payment.
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <span style="font-size: 12px; color: #999;">Effective Date: 1st April 2026</span>
+          <span style="width: 3px; height: 3px; border-radius: 50%; background: #D0D0D0; display: inline-block;"></span>
+          <span style="font-size: 12px; color: #999;">3 Sections</span>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Content ── */}
+    <section style="max-width: 680px; margin: 0 auto; padding: 0 24px 120px 24px;">
+
+      {sections.map((section, i) => (
+        <div style={`padding: 52px 0; ${i < sections.length - 1 ? 'border-bottom: 1px solid #F2F2F2;' : ''}`}>
+
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: #C0C0C0; text-transform: uppercase; flex-shrink: 0;">
+              {section.num}
+            </span>
+            <h2 class="font-season-mix" style="font-size: 22px; color: #111; line-height: 1.2; letter-spacing: -0.3px; margin: 0;">
+              {section.title}
+            </h2>
+          </div>
+
+          <div style="padding-left: 36px;">
+            {section.intro && (
+              <p style="font-size: 15px; line-height: 1.8; color: #444; margin: 0 0 16px 0;">
+                {section.intro}
+              </p>
+            )}
+
+            {section.items.length > 0 && (
+              <ul style="margin: 0 0 16px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;">
+                {section.items.map((item) => (
+                  <li style="display: flex; align-items: flex-start; gap: 12px;">
+                    <span style="margin-top: 9px; flex-shrink: 0; width: 4px; height: 4px; border-radius: 50%; background: #C8C8C8; display: inline-block;"></span>
+                    <span style="font-size: 15px; line-height: 1.75; color: #444;">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {section.outro && (
+              <p style="font-size: 14px; line-height: 1.75; color: #888; margin: 0; padding-top: 14px; border-top: 1px solid #F0F0F0;">
+                {section.outro}
+              </p>
+            )}
+          </div>
+
+        </div>
+      ))}
+
+      {/* Acknowledgement */}
+      <div style="margin-top: 16px; padding: 32px 36px; background: #F7F7F7; border-radius: 16px;">
+        <p style="font-size: 14px; line-height: 1.8; color: #666; margin: 0; text-align: center;">
+          By using HomeGuru, you acknowledge that you have read, understood, and agreed to this Refund Policy.
+        </p>
+      </div>
+
+      {/* Contact */}
+      <div style="margin-top: 16px; padding: 32px 36px; border: 1px solid #EBEBEB; border-radius: 16px; display: flex; flex-direction: column; gap: 6px;">
+        <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #999; margin: 0;">
+          Questions?
+        </p>
+        <p class="font-season-mix" style="font-size: 22px; color: #111; margin: 4px 0 8px 0;">Still have questions?</p>
+        <p style="font-size: 14px; color: #888; margin: 0 0 20px 0; line-height: 1.7;">
+          We're here to help. Reach out and we'll get back to you.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <a
+            href="mailto:support@homeguruworld.com"
+            style="display: inline-flex; align-items: center; gap: 8px; background: #111; color: #fff; font-size: 13px; font-weight: 600; padding: 11px 22px; border-radius: 100px; text-decoration: none; width: fit-content;"
+          >
+            support@homeguruworld.com
+          </a>
+          <a
+            href="https://www.homeguruworld.com"
+            target="_blank"
+            style="display: inline-flex; align-items: center; gap: 8px; background: #F5F5F5; color: #111; font-size: 13px; font-weight: 600; padding: 11px 22px; border-radius: 100px; text-decoration: none; width: fit-content;"
+          >
+            www.homeguruworld.com
+          </a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <FooterNew client:load />
+</Layout>

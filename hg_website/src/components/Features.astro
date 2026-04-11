@@ -1,0 +1,121 @@
+---
+const features = [
+  {
+    title: "Sovereign by design",
+    description: "Build, deploy, and run services with full control, developed and operated entirely in India"
+  },
+  {
+    title: "State of the art Services",
+    description: "Industry-leading services built for India's homes, culture, and context"
+  },
+  {
+    title: "Human at the core",
+    description: "Forward deployed professionals work alongside your teams to deliver production-ready solutions"
+  }
+];
+---
+
+<section class="features">
+  <div class="container">
+    <h2>Powering India's Service-first future</h2>
+    
+    <div class="features-grid">
+      <div class="feature-image">
+        <img src="https://via.placeholder.com/600x400" alt="Platform" />
+      </div>
+      
+      <div class="feature-list">
+        {features.map(feature => (
+          <div class="feature-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 0C13.927 1.923 14.738 4.551 14.427 7.062C15.37 6.392 16.522 5.998 17.767 5.998H17.998C17.998 7.279 17.595 8.47 16.909 9.447C19.344 9.121 21.898 9.894 23.769 11.765L24 11.996C22.041 13.955 19.352 14.76 16.799 14.401C17.552 15.406 17.998 16.654 17.998 18.002C16.652 18.002 15.406 17.557 14.402 16.806C14.759 19.357 13.954 22.043 11.996 24C10.041 22.044 9.235 19.361 9.59 16.812C8.587 17.559 7.344 18.001 6.002 18.001V17.771C6.002 16.524 6.397 15.369 7.069 14.426C4.556 14.739 1.925 13.928 0 12.003L0.231 11.772C2.104 9.9 4.66 9.127 7.097 9.455C6.407 8.476 6.002 7.283 6.002 5.998C7.348 5.998 8.594 6.443 9.597 7.193C9.241 4.643 10.047 1.957 12 0Z" fill="url(#gradient)"/>
+              <defs>
+                <linearGradient id="gradient" x1="12" y1="24" x2="12" y2="0">
+                  <stop stop-color="#E3F1D8"/>
+                  <stop offset="0.33" stop-color="#C8E4B0"/>
+                  <stop offset="0.66" stop-color="#83C040"/>
+                  <stop offset="1" stop-color="#496D21"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    padding: 6rem 0;
+  }
+
+  h2 {
+    font-size: clamp(1.875rem, 3vw, 2.25rem);
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 400;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: white;
+    border-radius: 48px;
+    padding: 2rem;
+    border: 1px solid #f0f0f0;
+  }
+
+  .feature-image {
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .feature-item svg {
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+
+  .feature-item h3 {
+    font-size: 1.375rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+  }
+
+  .feature-item p {
+    color: #999;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

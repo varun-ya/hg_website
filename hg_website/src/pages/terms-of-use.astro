@@ -1,0 +1,312 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderNew from '../components/HeaderNew';
+import FooterNew from '../components/FooterNew';
+
+const sections = [
+  {
+    num: "01",
+    title: "Introduction",
+    intro: "Welcome to HomeGuru (I) Private Limited (\"HomeGuru\", \"Company\", \"we\", \"our\", \"us\"). These Terms and Conditions (\"Terms\") govern your access to and use of our platform, including our website, mobile applications, and related services (collectively, the \"Platform\"). By accessing or using the Platform, you agree to be legally bound by these Terms. If you do not agree, you must not use the Platform.",
+    items: [],
+    outro: ""
+  },
+  {
+    num: "02",
+    title: "Nature of Platform",
+    intro: "HomeGuru is a technology-based marketplace that connects learners (\"Students\") with independent educators (\"Tutors\") for academic and non-academic learning.",
+    items: [
+      "HomeGuru does not provide tutoring services directly",
+      "Tutors are independent service providers, not employees, agents, or partners of HomeGuru",
+      "HomeGuru acts only as a facilitator/intermediary"
+    ],
+    outro: ""
+  },
+  {
+    num: "03",
+    title: "User Eligibility",
+    intro: "",
+    items: [
+      "You must be at least 18 years old to use the Platform",
+      "Minors may use the Platform only under parental/guardian supervision",
+      "You agree that all information provided is accurate and complete"
+    ],
+    outro: ""
+  },
+  {
+    num: "04",
+    title: "Account Registration & Security",
+    intro: "",
+    items: [
+      "Users must create an account to access services",
+      "You are responsible for maintaining confidentiality of login credentials",
+      "You are fully responsible for all activities under your account",
+      "HomeGuru shall not be liable for unauthorized account access"
+    ],
+    outro: ""
+  },
+  {
+    num: "05",
+    title: "Services Offered",
+    intro: "The Platform enables:",
+    items: [
+      "Discovery of Tutors",
+      "Booking and scheduling of sessions",
+      "Communication between Students and Tutors",
+      "Payment processing"
+    ],
+    outro: "HomeGuru does not guarantee learning outcomes, tutor performance, or session quality."
+  },
+  {
+    num: "06",
+    title: "Payments, Fees & Commission",
+    intro: "",
+    items: [
+      "Students agree to pay applicable session fees",
+      "Tutors may be charged commission and/or subscription fees",
+      "Payments are processed via third-party payment gateways",
+      "HomeGuru is not responsible for payment gateway failures"
+    ],
+    outro: "All payments are final and non-refundable, unless explicitly stated otherwise."
+  },
+  {
+    num: "07",
+    title: "Cancellation & Refund Policy",
+    intro: "",
+    items: [
+      "Cancellation/rescheduling policies may vary per session",
+      "No-shows may result in full fee forfeiture",
+      "Refunds, if applicable, shall be processed as per platform policy",
+      "Abuse of cancellation policies may lead to account suspension"
+    ],
+    outro: ""
+  },
+  {
+    num: "08",
+    title: "AI Usage & Platform Intelligence",
+    intro: "HomeGuru may use Artificial Intelligence (AI) to:",
+    items: [
+      "Match Students with Tutors",
+      "Provide recommendations",
+      "Optimize learning experience"
+    ],
+    outro: "You acknowledge that AI outputs may not always be accurate and HomeGuru does not guarantee results from AI-based suggestions."
+  },
+  {
+    num: "09",
+    title: "User Conduct",
+    intro: "You agree not to:",
+    items: [
+      "Violate any applicable laws",
+      "Harass, abuse, or harm other users",
+      "Share false, misleading, or inappropriate content",
+      "Circumvent the Platform to transact outside HomeGuru",
+      "Attempt to hack, disrupt, or misuse the Platform"
+    ],
+    outro: "Violation may result in immediate suspension or termination."
+  },
+  {
+    num: "10",
+    title: "Intellectual Property",
+    intro: "All content on the Platform including branding, logos, technology, design, and content is the exclusive property of HomeGuru.",
+    items: [],
+    outro: "Unauthorized use, copying, or distribution is strictly prohibited."
+  },
+  {
+    num: "11",
+    title: "Privacy & Data Protection",
+    intro: "Your data is handled in accordance with our Privacy Policy and applicable laws. By using the Platform, you consent to:",
+    items: [
+      "Collection and use of your data",
+      "Storage and processing for service improvement"
+    ],
+    outro: ""
+  },
+  {
+    num: "12",
+    title: "Disclaimer of Warranties",
+    intro: "The Platform is provided on an \"as is\" and \"as available\" basis. HomeGuru makes no warranties regarding:",
+    items: [
+      "Service availability",
+      "Tutor quality",
+      "Accuracy of content",
+      "Learning outcomes"
+    ],
+    outro: ""
+  },
+  {
+    num: "13",
+    title: "Limitation of Liability",
+    intro: "To the maximum extent permitted by law:",
+    items: [
+      "HomeGuru shall not be liable for any indirect, incidental, or consequential damages",
+      "Total liability shall not exceed the amount paid by the user in the last 3 months"
+    ],
+    outro: ""
+  },
+  {
+    num: "14",
+    title: "Indemnification",
+    intro: "You agree to indemnify and hold harmless HomeGuru from any claims, damages, losses, or liabilities arising from:",
+    items: [
+      "Your use of the Platform",
+      "Violation of these Terms",
+      "Disputes between Students and Tutors"
+    ],
+    outro: ""
+  },
+  {
+    num: "15",
+    title: "Termination",
+    intro: "HomeGuru reserves the right to:",
+    items: [
+      "Suspend or terminate accounts at its sole discretion",
+      "Remove content or restrict access"
+    ],
+    outro: "Users may also discontinue use at any time."
+  },
+  {
+    num: "16",
+    title: "International Use",
+    intro: "Users accessing the Platform from outside India are responsible for compliance with their local laws and regulations.",
+    items: [],
+    outro: ""
+  },
+  {
+    num: "17",
+    title: "Modifications to Terms",
+    intro: "HomeGuru reserves the right to modify these Terms at any time.",
+    items: [],
+    outro: "Continued use of the Platform after changes constitutes acceptance of updated Terms."
+  },
+  {
+    num: "18",
+    title: "Governing Law & Jurisdiction",
+    intro: "These Terms shall be governed by the laws of India.",
+    items: [],
+    outro: "All disputes shall be subject to the exclusive jurisdiction of courts in Jodhpur, Rajasthan."
+  },
+  {
+    num: "19",
+    title: "Dispute Resolution",
+    intro: "In case of disputes:",
+    items: [
+      "Parties shall first attempt amicable resolution",
+      "Failing which, disputes shall be resolved under applicable Indian laws"
+    ],
+    outro: ""
+  },
+  {
+    num: "20",
+    title: "Contact Information",
+    intro: "For any queries or concerns, reach us at:",
+    items: [
+      "support@homeguruworld.com",
+      "www.homeguruworld.com"
+    ],
+    outro: ""
+  },
+];
+---
+
+<Layout title="Terms & Conditions | HomeGuru">
+  <HeaderNew client:load />
+
+  <main style="font-family: Matter, sans-serif; background: #fff;">
+
+    {/* ── Hero ── */}
+    <section style="padding-top: 140px; padding-bottom: 72px; border-bottom: 1px solid #F0F0F0;">
+      <div style="max-width: 680px; margin: 0 auto; padding: 0 24px;">
+        <p style="font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: #999; margin-bottom: 20px;">
+          Legal · HomeGuru (I) Private Limited
+        </p>
+        <h1 class="font-season-mix" style="font-size: clamp(40px, 6vw, 64px); line-height: 1.04; letter-spacing: -1.5px; color: #111; margin: 0 0 24px 0;">
+          Terms &amp;<br/>Conditions
+        </h1>
+        <p style="font-size: 17px; line-height: 1.75; color: #666; max-width: 520px; margin: 0 0 28px 0;">
+          Please read these Terms carefully before using our platform. By accessing HomeGuru, you agree to be bound by the following terms.
+        </p>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <span style="font-size: 12px; color: #999;">Effective Date: 1st April 2026</span>
+          <span style="width: 3px; height: 3px; border-radius: 50%; background: #D0D0D0; display: inline-block;"></span>
+          <span style="font-size: 12px; color: #999;">20 Sections</span>
+        </div>
+      </div>
+    </section>
+
+    {/* ── Content ── */}
+    <section style="max-width: 680px; margin: 0 auto; padding: 0 24px 120px 24px;">
+
+      {sections.map((section, i) => (
+        <div style={`padding: 52px 0; ${i < sections.length - 1 ? 'border-bottom: 1px solid #F2F2F2;' : ''}`}>
+
+          {/* Section label + title */}
+          <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px;">
+            <span style="font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: #C0C0C0; text-transform: uppercase; flex-shrink: 0;">
+              {section.num}
+            </span>
+            <h2 class="font-season-mix" style="font-size: 22px; color: #111; line-height: 1.2; letter-spacing: -0.3px; margin: 0;">
+              {section.title}
+            </h2>
+          </div>
+
+          {/* Body */}
+          <div style="padding-left: 36px;">
+            {section.intro && (
+              <p style="font-size: 15px; line-height: 1.8; color: #444; margin: 0 0 16px 0;">
+                {section.intro}
+              </p>
+            )}
+
+            {section.items.length > 0 && (
+              <ul style="margin: 0 0 16px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;">
+                {section.items.map((item) => (
+                  <li style="display: flex; align-items: flex-start; gap: 12px;">
+                    <span style="margin-top: 9px; flex-shrink: 0; width: 4px; height: 4px; border-radius: 50%; background: #C8C8C8; display: inline-block;"></span>
+                    <span style="font-size: 15px; line-height: 1.75; color: #444;">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {section.outro && (
+              <p style="font-size: 14px; line-height: 1.75; color: #888; margin: 0; padding-top: 14px; border-top: 1px solid #F0F0F0;">
+                {section.outro}
+              </p>
+            )}
+          </div>
+
+        </div>
+      ))}
+
+      {/* Acknowledgement */}
+      <div style="margin-top: 16px; padding: 32px 36px; background: #F7F7F7; border-radius: 16px;">
+        <p style="font-size: 14px; line-height: 1.8; color: #666; margin: 0; text-align: center;">
+          By using HomeGuru, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.
+        </p>
+      </div>
+
+      {/* Contact */}
+      <div style="margin-top: 16px; padding: 32px 36px; border: 1px solid #EBEBEB; border-radius: 16px; display: flex; flex-direction: column; gap: 6px;">
+        <p style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #999; margin: 0;">
+          Questions?
+        </p>
+        <p class="font-season-mix" style="font-size: 22px; color: #111; margin: 4px 0 8px 0;">Still have questions?</p>
+        <p style="font-size: 14px; color: #888; margin: 0 0 20px 0; line-height: 1.7;">
+          We're here to help. Reach out and we'll get back to you.
+        </p>
+        <a
+          href="mailto:support@homeguruworld.com"
+          style="display: inline-flex; align-items: center; gap: 8px; background: #111; color: #fff; font-size: 13px; font-weight: 600; padding: 11px 22px; border-radius: 100px; text-decoration: none; width: fit-content; transition: opacity 0.2s;"
+          onmouseover="this.style.opacity='0.75'"
+          onmouseout="this.style.opacity='1'"
+        >
+          support@homeguruworld.com
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <FooterNew client:load />
+</Layout>

@@ -1,0 +1,89 @@
+---
+---
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <div class="noise-overlay"></div>
+        <h2>Build the future of India's Home Services</h2>
+        <p>with HomeGuru.</p>
+        <button class="cta-button">Get Started Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    padding: 4rem 0;
+  }
+
+  .cta-card {
+    background: white;
+    border-radius: 64px;
+    border: 1px solid #f0f0f0;
+    padding: 1rem;
+  }
+
+  .cta-content {
+    position: relative;
+    background: linear-gradient(to bottom, #13121e 0%, #a5bbfc 116.55%);
+    border-radius: 52px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem;
+    overflow: hidden;
+  }
+
+  .noise-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.25;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512"><filter id="n"><feTurbulence baseFrequency="0.9" numOctaves="4"/></filter><rect width="512" height="512" filter="url(%23n)" opacity="0.3"/></svg>');
+    background-size: 512px 512px;
+    pointer-events: none;
+    mix-blend-mode: soft-light;
+  }
+
+  .cta-content h2 {
+    position: relative;
+    z-index: 10;
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-content p {
+    position: relative;
+    z-index: 10;
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.2) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+
+  .cta-button:hover {
+    transform: scale(1.05);
+  }
+</style>

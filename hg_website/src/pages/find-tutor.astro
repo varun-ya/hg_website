@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderNew from '../components/HeaderNew';
+import FindTutorPage from '../components/FindTutorPage';
+import FooterNew from '../components/FooterNew';
+---
+
+<Layout title="Find a Tutor | HomeGuru">
+  <HeaderNew client:load />
+  <main class="z-100 flex-1 bg-[#fafafa] relative flex flex-col" style="font-family: Matter, sans-serif;">
+    <FindTutorPage client:load />
+  </main>
+  <FooterNew client:load />
+</Layout>

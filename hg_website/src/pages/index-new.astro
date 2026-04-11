@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderNew from '../components/HeaderNew';
+import HeroNew from '../components/HeroNew';
+import LogoCarousel from '../components/LogoCarousel';
+import WhyHomeGuruSection from '../components/WhyHomeGuruSection';
+import StackLayersNew from '../components/StackLayersNew';
+import SecuritySection from '../components/SecuritySection';
+import DeploymentSection from '../components/DeploymentSection';
+import TestimonialSection from '../components/TestimonialSection';
+import FinalCTA from '../components/FinalCTA';
+import FooterNew from '../components/FooterNew';
+---
+
+<Layout title="HomeGuru | Learn Anything 1 on 1 With the Right Guru">
+  <HeaderNew client:load />
+  
+  <main class="z-100 flex-1 bg-[#fafafa] relative flex flex-col" style="font-family: Matter, sans-serif;">
+    <div class="flex flex-col gap-24 md:gap-44 mx-auto w-full overflow-x-clip">
+      <HeroNew client:load />
+      <LogoCarousel client:load />
+      
+      <section class="relative mx-auto w-[85%] md:w-9/12 max-w-[1400px]">
+        <WhyHomeGuruSection client:load />
+      </section>
+      
+      <section class="relative mx-auto w-[85%] md:w-9/12 max-w-[1400px]">
+        <StackLayersNew client:load />
+      </section>
+      
+      <section class="relative mx-auto w-[85%] md:w-9/12 max-w-[1400px]">
+        <SecuritySection client:load />
+      </section>
+      
+      <section class="relative mx-auto w-[85%] md:w-9/12 max-w-[1400px]">
+        <DeploymentSection client:load />
+      </section>
+      
+      <section class="relative mx-auto w-[85%] md:w-9/12 max-w-[1400px]">
+        <TestimonialSection client:load />
+      </section>
+      
+      <section class="relative mx-auto mb-10 md:mb-0 w-[85%] md:w-9/12 max-w-[1400px]">
+        <FinalCTA client:load />
+      </section>
+    </div>
+  </main>
+  
+  <FooterNew client:load />
+</Layout>
+
+<style>
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+</style>
